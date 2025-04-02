@@ -2,7 +2,14 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-.Tasca S1.03. Java Collections.iml
+Tasca S1.03. Java Collections.iml
+*.iml
+*.xml
+*.idea
+.class
+.iml
+.xml
+.idea
 
 ### Eclipse ###
 .apt_generated
