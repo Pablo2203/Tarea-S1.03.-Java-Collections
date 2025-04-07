@@ -25,10 +25,8 @@ public class FileManagerCountries {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                // Ignorar líneas vacías
                 if (line.trim().isEmpty()) continue;
 
-                // Separar país y capital por el primer espacio
                 String[] parts = line.split("\\s+", 2);
                 if (parts.length == 2) {
                     String country = parts[0].trim();
