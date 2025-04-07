@@ -2,6 +2,7 @@ package Level1.Exercise3.model;
 
 import Level1.Exercise3.fileManager.FileManagerClassification;
 import Level1.Exercise3.fileManager.FileManagerCountries;
+import Level3.exceptions.IncorrectNameExepction;
 
 import java.util.*;
 
@@ -23,18 +24,31 @@ public class Game {
         this.random = new Random();
         this.scanner = new Scanner(System.in);
     }
+    public String getName(){
+        System.out.println("Bienvenido/a al juego de capitales!");
+        System.out.print("Por favor, ingresa tu nombre: ");
+
+        while (true) {
+            try {
+                System.out.println("Please introduce the name of the person:");
+                userName = scanner.nextLine().trim();
+                if (userName.matches(".*\\d.*") || userName.isEmpty()) {
+                    throw new IncorrectNameExepction();
+                }
+                return userName;
+            } catch (IncorrectNameExepction e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 
     public void start() {
-        // Verificamos si el mapa está vacío antes de continuar
-       if (countriesAndCapitals.isEmpty()) {
+        if (countriesAndCapitals.isEmpty()) {
             System.out.println("Error:There are no countries in the map.");
             return; // Salimos del método si no hay datos
         }
 
         List<String> countryList = List.copyOf(countriesAndCapitals.keySet());
-        System.out.println("Bienvenido/a al juego de capitales!");
-        System.out.print("Por favor, ingresa tu nombre: ");
-        userName = scanner.nextLine().trim();
 
         for (int i = 0; i < 10; i++) {
             String randomCountry = countryList.get(random.nextInt(countryList.size()));

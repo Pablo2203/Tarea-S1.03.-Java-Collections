@@ -9,7 +9,7 @@ public class FileManagerClassification {
     public void saveScore(String name, int score) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
             writer.write(name + " - Score: " + score + "/10");
-            writer.newLine(); // Añadir nueva línea para el siguiente registro
+            writer.newLine();
             System.out.println("Información guardada en Classification.txt: " + name + " - Score: " + score);
         } catch (IOException e) {
             System.err.println("Error guardando en Classification.txt: " + e.getMessage());

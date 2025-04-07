@@ -9,7 +9,7 @@ public class Main {
         FileManagerCountries fileManagerCountries = new FileManagerCountries();
         FileManagerClassification fileManagerClassification = new FileManagerClassification();
         Game game = new Game(fileManagerCountries,fileManagerClassification);
-
+        game.getName();
         game.start();
         fileManagerClassification.readFileClassification();
     }

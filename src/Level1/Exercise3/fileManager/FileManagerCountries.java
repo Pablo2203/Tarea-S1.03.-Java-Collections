@@ -29,7 +29,7 @@ public class FileManagerCountries {
                 if (line.trim().isEmpty()) continue;
 
                 // Separar país y capital por el primer espacio
-                String[] parts = line.split("\\s+", 2); // Dividimos en dos partes (país y capital)
+                String[] parts = line.split("\\s+", 2);
                 if (parts.length == 2) {
                     String country = parts[0].trim();
                     String capital = parts[1].trim();

@@ -30,7 +30,7 @@ public class Menu {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida. Por favor, introduzca un número.");
-                scanner.next(); // Limpiar el scanner
+                scanner.next();
             }
 
         }  while (option != 0) ;

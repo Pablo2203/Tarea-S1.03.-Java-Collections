@@ -78,16 +78,12 @@ public void showMenu(){
 
     public void showPeopleFromAToZName() {
         try {
-            // Cargar la información de las personas del archivo
             Map<String, Person> personMap = this.fileManager.loadPersonalInformation("data.csv");
 
-            // Convertir los valores del mapa a una lista
             List<Person> people = new ArrayList<>(personMap.values());
 
-            // Ordenar la lista por nombre (orden alfabético: A-Z)
             people.sort(Comparator.comparing(Person::getName));
 
-            // Mostrar las personas ordenadas
             for (Person person : people) {
                 System.out.println(person);
             }
@@ -101,8 +97,7 @@ public void showMenu(){
             Map<String, Person> personMap = this.fileManager.loadPersonalInformation("data.csv");
 
             List<Person> reversedPeople = new ArrayList<>(personMap.values());
-            ListIterator<Person> iterator = reversedPeople.listIterator(reversedPeople.size());
-            reversedPeople.sort(Comparator.comparing(Person::getName));
+            reversedPeople.sort(Comparator.comparing(Person::getName).reversed());
 
             for (Person reversedPerson : reversedPeople) {
                 System.out.println(reversedPerson);
@@ -131,8 +126,7 @@ public void showMenu(){
             Map<String, Person> personMap = this.fileManager.loadPersonalInformation("data.csv");
 
             List<Person> reversedPeople = new ArrayList<>(personMap.values());
-            ListIterator<Person> iterator = reversedPeople.listIterator(reversedPeople.size());
-            reversedPeople.sort(Comparator.comparing(Person::getLastName));
+            reversedPeople.sort(Comparator.comparing(Person::getLastName).reversed());
 
             for (Person reversedPerson : reversedPeople) {
                 System.out.println(reversedPerson);
@@ -164,7 +158,7 @@ public void showMenu(){
 
             List<Person> reversedPeople = new ArrayList<>(personMap.values());
             ListIterator<Person> iterator = reversedPeople.listIterator(reversedPeople.size());
-            reversedPeople.sort(Comparator.comparing(Person::getDni));
+            reversedPeople.sort(Comparator.comparing(Person::getDni).reversed());
 
             for (Person reversedPerson : reversedPeople) {
                 System.out.println(reversedPerson);

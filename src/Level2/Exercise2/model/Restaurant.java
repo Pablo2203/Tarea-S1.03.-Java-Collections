@@ -22,7 +22,7 @@ public class Restaurant {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Restaurant restaurant = (Restaurant) o;//CASTEO EL OBJETO
+        Restaurant restaurant = (Restaurant) o;
         if (name.equals(restaurant.name) && score != restaurant.score) return false;
         return name.equals(restaurant.name);
     }
